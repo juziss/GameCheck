@@ -1,0 +1,148 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #ebd3f7;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 4px;
+}
+
+::selection {
+    background-color: #ae66d4; 
+    color: #fff;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.logo {
+    width: 250px; 
+    height: auto; 
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 100%; 
+    height: auto; 
+}
+
+.esquerda {
+    background-color: #1a151c;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.linha {
+    width: 30%;    
+    height: 3px;
+    border: none;
+    background-color: #8747a8;
+    border-radius: 3px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.campos {
+    width: 80%;
+    height: auto;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.campos input {
+    width: 345px;
+    height: 40px;
+    padding: 0 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    outline: 0;
+    transition: 0.2s;
+    margin-bottom: 3px;
+}
+
+.campos input:focus {
+    border-color: #8747a8;
+}
+
+.redefinir-senha a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ae66d4;
+}
+
+.redefinir-senha a:hover {
+    color: #ebd3f7;
+}
+
+.entrar-botao {
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #8747a8;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin: 4% auto 0 auto;
+    width: 345px;
+    height: 42px;
+    display: block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.entrar-botao:hover {
+    background-color: #ae66d4;
+}
+
+.cadastro-botao {
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #281d2e79;
+    color: #e5f1da;
+    border: none;
+    border-radius: 3px;
+    width: 150px;
+    height: 42px;
+    transition: background-color 0.3s ease;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.cadastro-botao:active {
+    background-color: #8747a8;
+}
+
+.direita {
+    width: 70%;
+    height: 100vh;
+}
+
+.imagem-direita {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc47194c-4389-40b2-b130-e3de76db4ea0/df5uscm-3f16c5f4-c591-4168-bcd8-037911bbf732.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JjNDcxOTRjLTQzODktNDBiMi1iMTMwLWUzZGU3NmRiNGVhMFwvZGY1dXNjbS0zZjE2YzVmNC1jNTkxLTQxNjgtYmNkOC0wMzc5MTFiYmY3MzIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Ov_nko12J3DvSJmTe3nnhRt2S_Nm5Wl3EODBK-Z6omc');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
