@@ -8,11 +8,15 @@
     box-sizing: border-box;
 }
 
-h1 {
+h1, h2 {
     font-weight: 500;
     font-size: 1.5rem;
     margin-top: 40px;
     margin-bottom: 4px;
+}
+
+h2 {
+    margin-top: 60px;
 }
 
 ::selection {
@@ -84,17 +88,20 @@ main {
     border-color: #8747a8;
 }
 
-.redefinir-senha a {
+a {
     font-size: 13px;
-    font-weight: 600;
     color: #ae66d4;
 }
 
-.redefinir-senha a:hover {
+a:hover {
     color: #ebd3f7;
 }
 
-.entrar-botao {
+.redefinir-senha {  
+    font-weight: 600;
+}
+
+.entrar-botao, .cadastrar-botao {
     font-size: 18px;
     font-weight: 500;
     background-color: #8747a8;
@@ -112,6 +119,10 @@ main {
 }
 
 .entrar-botao:hover {
+    background-color: #ae66d4;
+}
+
+.cadastrar-botao:hover {
     background-color: #ae66d4;
 }
 
@@ -145,4 +156,47 @@ main {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.tela-cadastro {
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+    text-align: center;
+}
+
+.tela-cadastro.show {
+    display: flex;
+}
+
+.tela-cadastro .campos {
+    width: 80%;
+    max-width: 345px;
+    margin: 0 auto;
+}
+
+.tela-cadastro .campos input {
+    width: 345px;
+}
+
+.tela-cadastro p {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #ebd3f7;
+    width: 345px;
+}
+
+.tela-cadastro .login-link {
+    width: 345px;
+    text-align: left;
+    font-size: 16px;
+    color: #ae66d4;
+    margin-top: 15px;
+}
+
+.titulo-cad{
+    margin-bottom: 3dvh;
 }
