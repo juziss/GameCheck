@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/home-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="../public/favicon.png" />
+    <title>GameCheck</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="../public/logo-gamecheck-branco.png"
+        alt="Logo GameCheck"
+        class="logo-nav" />
+      <nav class="navbar">
+        <div class="nav-center">
+          <ul class="nav-list">
+            <li><a href="#">JOGOS</a></li>
+            <li><a href="#">FAVORITOS</a></li>
+            <li><a href="#">MINHAS LISTAS</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="menuToggle">
+        <img
+          src="../public/user-profile.jpg"
+          alt="Foto de Perfil"
+          class="profile-pic"
+          id="profile-pic" />
+        <span class="username" id="username">Usuário</span>
+        <div class="dropdown" id="dropdown">
+          <ul class="dropdown-list">
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Sair</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="home">
+      <div class="container">
+        <section class="filtros">
+            <div class="filtros-container">
+              <label for="tempo">Tempo</label>
+              <select name="tempo" id="tempo" class="select-field">
+                <option value="antigo">Mais antigo</option>
+                <option value="recente">Mais recente</option>
+              </select>
+              <label for="avaliacao">Avaliação</label>
+              <select name="avaliacao" id="avaliacao" class="select-field">
+                <option value="melhor">Melhores</option>
+                <option value="pior">Piores</option>
+              </select>
+              <input type="text" class="search-field" placeholder="Buscar..." />
+            </div>
+          </section>
+          </div>
+            <section class="classificacao">
+              <div class="semana">
+                <p>Preferidos da semana <a href="#">Ver mais+</a></p>
+                <hr>
+                <div class="cards-container">
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Jogo 1</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Jogo 2</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Jogo 3</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Jogo 4</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="semana">
+                <p>Odiados da semana 
+                    <a href="">Ver mais+</a></p>
+                    <hr>
+                <div class="cards-container">
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Jogo 5</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Jogo 6</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Jogo 7</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Jogo 8</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="comunidade">
+                <p>Listas da comunidade 
+                    <a href="">Ver mais+</a></p>
+                    <hr>
+                <div class="cards-container">
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Lista 1</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Lista 2</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Lista 3</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-content">
+                      <p class="game-title">Lista 4</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          
+      </div>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="">Sobre</a></li>
+        <li><a href="">Ajuda</a></li>
+        <li><a href="">Contato</a></li>
+      </ul>
+      <p>
+        Todos os direitos reservados © 2024 GAMECHECK. A avaliação dos jogos é
+        uma expressão da comunidade.
+      </p>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
