@@ -1,0 +1,268 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ebd3f7;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1a151c;
+}
+
+main{
+    margin-inline: 200px;
+}
+
+h1, h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 4px;
+    color: #ebd3f7;
+}
+
+h2 {
+    margin-top: 60px;
+}
+
+a {
+    font-size: 13px;
+    color: #ae66d4;
+}
+
+a:hover {
+    color: #ebd3f7;
+}
+
+::selection {
+    background-color: #ae66d4; 
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #281d2e;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #36283e;
+}
+
+/* Personalização da tela Home */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: transparent;
+}
+
+.logo-nav {
+    height: auto;
+    width: 110.51px;
+}
+
+.navbar {
+    font-family: "Jersey 10", serif;
+    font-weight: 400;
+    font-style: normal;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-center {
+    display: flex;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li a {
+    color: #ebd3f7; 
+    text-decoration: none;
+    font-size: 2.0rem;
+    font-family: "Jersey 10", serif; 
+    font-weight: 400;
+    font-style: normal;
+    transition: color 0.3s ease; 
+}
+
+.nav-list li a:hover {
+    color: white; 
+}
+
+.menuToggle {
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    position: relative;
+}
+
+.profile-pic {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.username {
+    color: #fff;
+    font-size: 16px;
+}
+
+.menuToggle {
+    
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px; 
+    border-radius: 50%; 
+    margin-right: 5px; 
+}
+.dropdown {
+    display: none; 
+}
+
+.menuToggle {
+    cursor: pointer;
+}
+
+.menuToggle:hover .dropdown {
+    display: block; 
+}
+
+.dropdown-list {
+    list-style: none;
+    position: absolute; 
+}
+
+hr{
+    height: 1px;
+    background-color:#ae66d4;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border-style: none;
+    border-radius: 3px;
+}
+
+/* seção dos cards */
+.classificacao {
+    margin-top: 20px; 
+}
+
+.semana, .comunidade {
+    margin-bottom: 15px; 
+}
+
+.semana p, .comunidade p {
+    font-size: 1.3rem; 
+    font-weight: bold; 
+}
+
+.cards-container {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 10px; 
+}
+
+.card {
+    background-color: #ebd3f7; 
+    border: 2px solid transparent;
+    border-radius: 5px; 
+    width: 24%; 
+    position: relative;
+    overflow: hidden; 
+    transition: border-color 0.3s; 
+}
+
+.card:hover {
+    border-color: #8747a8; 
+}
+
+.card-content {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    height: 400px;
+}
+
+.game-title {
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #36283e; 
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    opacity: 0; 
+    transition: opacity 0.3s;
+}
+
+.card:hover .game-title {
+    opacity: 1; 
+}
+
+/* filtros */
+.filtros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.select-field {
+    margin: 10px 0;
+}
+
+/* footer */
+
+footer {
+    background-color: #1a151c; 
+    color: #ebd3f7; 
+    padding: 20px; 
+    text-align: center; 
+    margin-top: 20px; 
+    border-top: 1px solid #8747a8; 
+}
+
+footer ul {
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 10px; 
+}
+
+footer ul li {
+    margin: 0 15px; 
+}
+
+footer ul li a {
+    color: #ae66d4;
+    text-decoration: none; 
+    font-size: 14px;
+    transition: color 0.3s; 
+}
+
+footer ul li a:hover {
+    color: #ebd3f7; 
+}
+
+footer p {
+    font-size: 12px; 
+    margin-top: 10px; 
+}
