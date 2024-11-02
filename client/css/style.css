@@ -1,7 +1,9 @@
+/* Personalização geral e das telas de login e cadastro*/
 * {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     text-decoration: none;
+    color: #ebd3f7;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -84,6 +86,7 @@ main {
     transition: 0.2s;
     margin-bottom: 3px;
     background-color: #fff;
+    color: #1a151c;
 }
 
 .campos input:focus {
@@ -205,4 +208,82 @@ a:hover {
 
 .titulo-cad{
     margin-bottom: 3dvh;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #281d2e;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #36283e;
+}
+
+/* Personalização da tela Home */
+
+.logo-nav {
+    width: 220px;
+    height: auto;
+}
+
+.navbar {
+    display: flex; 
+    align-items: center;
+    padding: 10px; 
+}
+
+.nav-list {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+    display: flex; 
+}
+
+.nav-list li {
+    margin: 0 15px; 
+}
+
+.nav-list a {
+    text-decoration: none; 
+    color: #ebd3f7;
+    padding: 5px 10px; 
+    font-size: 1.7rem;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nav-list a:hover {
+    color: #fff;
+}
+
+.profile-pic {
+    width: 40px; 
+    border-radius: 50%; 
+}
+
+.dropdown {
+    display: none; 
+}
+
+.menuToggle {
+    cursor: pointer; /* Altera o cursor para mãozinha */
+}
+
+.menuToggle:hover .dropdown {
+    display: block; 
+}
+
+.dropdown-list {
+    list-style: none;
+    position: absolute; 
 }
