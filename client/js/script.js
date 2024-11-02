@@ -1,3 +1,5 @@
+// Transição entre telas Login e Cadastro
+
 $(document).ready(function() {
     $('.tela-cadastro').hide();
 
@@ -11,6 +13,8 @@ $(document).ready(function() {
         $('.logo, h1, .linha, .redefinir-senha, .input-email, .input-senha, .entrar-botao, .cadastro').show();
     });
 });
+
+// Validação de campos Login e Cadastro
 
 $(document).ready(function() {
     
