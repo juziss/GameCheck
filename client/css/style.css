@@ -1,7 +1,6 @@
 * {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    color: #ebd3f7;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -13,6 +12,7 @@ h1, h2 {
     font-size: 1.5rem;
     margin-top: 40px;
     margin-bottom: 4px;
+    color: #ebd3f7;
 }
 
 h2 {
@@ -86,6 +86,10 @@ main {
 
 .campos input:focus {
     border-color: #8747a8;
+}
+
+.cadastro{
+    color: #ebd3f7;
 }
 
 a {
