@@ -75,3 +75,55 @@ $(document).ready(function() {
         return re.test(email);
     }
 });
+
+// classificação
+
+document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('click', function() {
+        const rating = this.getAttribute('data-value');
+
+        // Remove a seleção de todas as estrelas
+        document.querySelectorAll('.star').forEach(s => s.classList.remove('selected'));
+
+        // Adiciona a classe 'selected' a partir da estrela clicada (da esquerda para a direita)
+        for (let i = 0; i < rating; i++) {
+            document.querySelectorAll('.star')[i].classList.add('selected');
+        }
+
+        console.log(`Avaliação escolhida: ${rating} estrelas`);
+    });
+});
+
+// avaliacoes
+
+const comentarioInput = document.getElementById('comentario-input');
+const enviarComentario = document.getElementById('enviar-comentario');
+const listaComentarios = document.getElementById('lista-comentarios');
+const contadorCaracteres = document.getElementById('contador-caracteres');
+
+let usuarioNome = "Nome Usuário"; // Defina o nome do usuário
+let usuarioFoto = "../public/user-profile.jpg"; // Caminho para a foto do perfil
+
+comentarioInput.addEventListener('input', () => {
+    const totalCaracteres = comentarioInput.value.length;
+    contadorCaracteres.textContent = `${totalCaracteres}/250 caracteres`;
+});
+
+enviarComentario.addEventListener('click', () => {
+    const comentarioTexto = comentarioInput.value.trim();
+    if (comentarioTexto) {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <div class="comentario">
+                <img src="${usuarioFoto}" alt="Foto de Perfil" class="perfil-comentario" />
+                <div>
+                    <strong>${usuarioNome}</strong>
+                    <p>${comentarioTexto}</p>
+                </div>
+            </div>
+        `;
+        listaComentarios.appendChild(li);
+        comentarioInput.value = '';
+        contadorCaracteres.textContent = `0/250 caracteres`;
+    }
+});
