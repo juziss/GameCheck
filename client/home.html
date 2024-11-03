@@ -14,40 +14,38 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
       rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="../public/favicon.png" />
+      <link rel="icon" type="image/x-icon" href="../public/favicon.png" />
     <title>GameCheck</title>
   </head>
   <body>
     <header>
-      <img
-        src="../public/logo-gamecheck-branco.png"
-        alt="Logo GameCheck"
-        class="logo-nav" />
       <nav class="navbar">
-        <div class="nav-center">
-          <ul class="nav-list">
-            <li><a href="#">JOGOS</a></li>
-            <li><a href="#">FAVORITOS</a></li>
-            <li><a href="#">MINHAS LISTAS</a></li>
-          </ul>
+        <div class="logo">
+          <img src="/public/favicon.png" />
+          <h2>GAMECHECK</h2>
+        </div>
+        <div class="links">
+          <a href="#">Jogos</a>
+          <a href="#">Favoritos</a>
+          <a href="#">Minhas Listas</a>
+        </div>
+        <div class="dropdown">
+          <a href="#"
+            >Nome Usuário
+            <img
+              src="/public/user-profile.jpg"
+              alt="Foto de Perfil"
+              class="profile-pic"
+              id="profile-pic"
+            />
+          </a>
+          <div class="menu">
+            <a href="#"> Perfil </a>
+            <a href="#"> Configurações </a>
+            <a href="#"> Sair </a>
+          </div>
         </div>
       </nav>
-
-      <div class="menuToggle">
-        <img
-          src="../public/user-profile.jpg"
-          alt="Foto de Perfil"
-          class="profile-pic"
-          id="profile-pic" />
-        <span class="username" id="username">Usuário</span>
-        <div class="dropdown" id="dropdown">
-          <ul class="dropdown-list">
-            <li><a href="#">Perfil</a></li>
-            <li><a href="#">Configurações</a></li>
-            <li><a href="#">Sair</a></li>
-          </ul>
-        </div>
-      </div>
     </header>
     <main class="home">
       <div class="container">
@@ -62,93 +60,105 @@
               <select name="avaliacao" id="avaliacao" class="select-field">
                 <option value="melhor">Melhores</option>
                 <option value="pior">Piores</option>
+                <div class="search-container">
+                  <input type="text" class="search-field" placeholder="Buscar..." />
               </select>
-              <input type="text" class="search-field" placeholder="Buscar..." />
+            </div>
             </div>
           </section>
           </div>
-            <section class="classificacao">
-              <div class="semana">
-                <p>Preferidos da semana <a href="#">Ver mais+</a></p>
-                <hr>
-                <div class="cards-container">
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Jogo 1</p>
-                    </div>
+          <section class="classificacao">
+            <div class="semana">
+              <p>Preferidos da semana <a href="#">Ver mais+</a></p>
+              <hr class="divisoria">
+              <div class="cards-container">
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/jogo-1.jpg" alt="Jogo 1" class="card-image" />
+                    <p class="game-title">Jogo 1</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Jogo 2</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/jogo-2.jpg" alt="Jogo 2" class="card-image" />
+                    <p class="game-title">Jogo 2</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Jogo 3</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/jogo-3.jpg" alt="Jogo 3" class="card-image" />
+                    <p class="game-title">Jogo 3</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Jogo 4</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/jogo-4.jpg" alt="Jogo 4" class="card-image" />
+                    <p class="game-title">Jogo 4</p>
                   </div>
                 </div>
               </div>
-              <div class="semana">
-                <p>Odiados da semana 
-                    <a href="">Ver mais+</a></p>
-                    <hr>
-                <div class="cards-container">
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Jogo 5</p>
-                    </div>
+            </div>
+            <div class="semana">
+              <p>Odiados da semana <a href="">Ver mais+</a></p>
+              <hr class="divisoria">
+              <div class="cards-container">
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/jogo-5.jpg" alt="Jogo 5" class="card-image" />
+                    <p class="game-title">Jogo 5</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Jogo 6</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/jogo-6.jpg" alt="Jogo 6" class="card-image" />
+                    <p class="game-title">Jogo 6</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Jogo 7</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/jogo-7.jpg" alt="Jogo 7" class="card-image" />
+                    <p class="game-title">Jogo 7</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Jogo 8</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/jogo-8.jpg" alt="Jogo 8" class="card-image" />
+                    <p class="game-title">Jogo 8</p>
                   </div>
                 </div>
               </div>
-              <div class="comunidade">
-                <p>Listas da comunidade 
-                    <a href="">Ver mais+</a></p>
-                    <hr>
-                <div class="cards-container">
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Lista 1</p>
-                    </div>
+            </div>
+            <div class="comunidade">
+              <p>Listas da comunidade <a href="">Ver mais+</a></p>
+              <hr class="divisoria">
+              <div class="cards-container">
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/lista-1.jpg" alt="Lista 1" class="card-image" />
+                    <p class="game-title">Lista 1</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Lista 2</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/lista-2.jpg" alt="Lista 2" class="card-image" />
+                    <p class="game-title">Lista 2</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Lista 3</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/lista-3.jpg" alt="Lista 3" class="card-image" />
+                    <p class="game-title">Lista 3</p>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <p class="game-title">Lista 4</p>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-content">
+                    <img src="/public/lista-4.jpg" alt="Lista 4" class="card-image" />
+                    <p class="game-title">Lista 4</p>
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
           
       </div>
     </main>
@@ -164,5 +174,6 @@
       </p>
     </footer>
     <script src="./js/script.js"></script>
+    
   </body>
 </html>
