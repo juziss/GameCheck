@@ -30,7 +30,7 @@ a:hover {
 }
 
 ::selection {
-    background-color: #ae66d4; 
+    background-color: #ae66d4;
     color: #fff;
 }
 
@@ -63,73 +63,80 @@ a:hover {
 
 /* seção dos cards */
 .classificacao {
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
-.semana, .comunidade {
-    margin-bottom: 15px; 
+.semana,
+.comunidade {
+    margin-bottom: 15px;
 }
 
-.semana p, .comunidade p {
-    font-size: 1.3rem; 
-    font-weight: bold; 
+.semana p,
+.comunidade p {
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .cards-container {
-    display: flex; 
-    justify-content: space-between; 
-    margin-top: 10px; 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .card {
-    background-color: #ebd3f7; 
+    background-color: #ebd3f7;
     border: 2px solid transparent;
-    border-radius: 5px; 
-    width: 24%; 
+    border-radius: 5px;
+    width: 24%;
     position: relative;
-    overflow: hidden; 
-    transition: border-color 0.3s; 
-    box-shadow: 0 0 5px #10001c; 
+    overflow: hidden;
+    transition: border-color 0.3s;
+    box-shadow: 0 0 5px #10001c;
+    /* Sombra inicial esfumaçada */
 }
 
 .card-image {
-    width: 100%; 
-    height: auto; 
-    display: block; 
-  }
+    width: 100%;
+    /* Faz a imagem preencher toda a largura do cartão */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    display: block;
+    /* Remove espaço embaixo da imagem */
+}
 
 .card:hover {
-    border-color: #8747a8; 
+    border-color: #8747a8;
     box-shadow: 0 0px 7px #281d2e;
 }
 
 .card-content {
-    display: flex; 
+    display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     height: 400px;
 }
 
 .game-title {
-    font-size: 1.2rem; 
-    font-weight: bold; 
-    color: #8747a8; 
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8747a8;
     background-color: transparent;
-    position: absolute; 
-    bottom: 10px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    opacity: 0; 
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
     transition: opacity 0.3s;
-    text-shadow: 
-    -1px -1px 0 #ebd3f7,  
-    1px -1px 0 #ebd3f7,
-    -1px 1px 0 #ebd3f7,
-    1px 1px 0#ebd3f7;
+    text-shadow:
+        -1px -1px 0 #ebd3f7,
+        1px -1px 0 #ebd3f7,
+        -1px 1px 0 #ebd3f7,
+        1px 1px 0#ebd3f7;
+    /* Sombras que criam o efeito de borda */
 }
 
 .card:hover .game-title {
-    opacity: 1; 
+    opacity: 1;
 }
 
 /* filtros */
@@ -141,28 +148,30 @@ a:hover {
 }
 
 .select-field {
-    background-color: #281d2e; 
-    border: 1px solid #ae66d4; 
+    background-color: #281d2e;
+    border: 1px solid #ae66d4;
     padding: 4px;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
     margin: 10px 0;
     border-radius: 6px;
     margin-right: 15px;
 }
 
-.select-field:hover, 
+.select-field:hover,
 .select-field:focus {
-    background-color: #281d2e; 
+    background-color: #281d2e;
     outline: none;
 }
 
 .select-field option {
-    background-color: #281d2e; 
-    color: #ebd3f7; 
+    background-color: #281d2e;
+    /* Define a cor de fundo das opções da combobox */
+    color: #ebd3f7;
+    /* Define a cor do texto das opções */
 }
 
 label {
-    font-weight: 600; 
+    font-weight: 600;
     margin-right: 5px;
 }
 
@@ -176,14 +185,14 @@ label {
     border: 1px solid #ae66d4;
     padding: 4px 40px 4px 10px;
     border-radius: 6px;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
     color: #ebd3f7;
     font-size: 16px;
 }
 
-.search-field:hover, 
+.search-field:hover,
 .search-field:focus {
-    background-color: #281d2e; 
+    background-color: #281d2e;
     outline: none;
 }
 
@@ -220,8 +229,8 @@ label {
     font-size: 2.2rem;
 }
 
-.navbar .dropdown > a {
-    font-weight: 600; 
+.navbar .dropdown>a {
+    font-weight: 600;
 }
 
 .navbar .links a:hover {
@@ -245,7 +254,7 @@ label {
     cursor: pointer;
 }
 
-.dropdown > a {
+.dropdown>a {
     display: flex;
     align-items: center;
     gap: 2px;
@@ -253,7 +262,7 @@ label {
     font-size: 1.0rem;
 }
 
-.dropdown > a > img {
+.dropdown>a>img {
     width: 50px;
     height: 50px;
     margin-left: 12px;
@@ -299,18 +308,18 @@ label {
     visibility: visible;
 }
 
-.menu > a {
+.menu>a {
     font-size: 1.0rem;
     padding: 12px 20px;
 }
 
-.menu > a:hover {
+.menu>a:hover {
     background: #281d2e;
 }
 
-.profile-pic { 
-    border-radius: 50%; 
-    margin-right: 5px; 
+.profile-pic {
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 .links {
@@ -327,20 +336,20 @@ label {
 /* footer */
 
 footer {
-    background-color: #1a151c; 
-    color: #ebd3f7; 
-    padding: 20px; 
-    text-align: center; 
-    margin-top: 20px; 
-    border-top: 1px solid #8747a8; 
+    background-color: #1a151c;
+    color: #ebd3f7;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #8747a8;
 }
 
 footer ul {
-    list-style: none; 
-    padding: 0; 
-    display: flex; 
-    justify-content: center; 
-    margin-bottom: 10px; 
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 footer ul li {
@@ -349,16 +358,16 @@ footer ul li {
 
 footer ul li a {
     color: #ae66d4;
-    text-decoration: none; 
+    text-decoration: none;
     font-size: 14px;
-    transition: color 0.3s; 
+    transition: color 0.3s;
 }
 
 footer ul li a:hover {
-    color: #ebd3f7; 
+    color: #ebd3f7;
 }
 
 footer p {
-    font-size: 12px; 
-    margin-top: 10px; 
+    font-size: 12px;
+    margin-top: 10px;
 }
