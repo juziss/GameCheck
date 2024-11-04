@@ -10,7 +10,8 @@
     background-color: #1a151c;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-weight: 500;
     font-size: 1.5rem;
     margin-top: 40px;
@@ -23,7 +24,7 @@ h2 {
 }
 
 ::selection {
-    background-color: #ae66d4; 
+    background-color: #ae66d4;
     color: #fff;
 }
 
@@ -34,15 +35,15 @@ main {
 }
 
 .logo {
-    width: 250px; 
-    height: auto; 
+    width: 250px;
+    height: auto;
     margin-top: 70px;
     margin-bottom: 10px;
 }
 
 .logo img {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
 }
 
 .esquerda {
@@ -57,7 +58,7 @@ main {
 }
 
 .linha {
-    width: 30%;    
+    width: 30%;
     height: 3px;
     border: none;
     background-color: #8747a8;
@@ -93,7 +94,7 @@ main {
     border-color: #8747a8;
 }
 
-.cadastro{
+.cadastro {
     color: #ebd3f7;
 }
 
@@ -106,11 +107,12 @@ a:hover {
     color: #ebd3f7;
 }
 
-.redefinir-senha {  
+.redefinir-senha {
     font-weight: 600;
 }
 
-.entrar-botao, .cadastrar-botao {
+.entrar-botao,
+.cadastrar-botao {
     font-size: 18px;
     font-weight: 500;
     background-color: #8747a8;
@@ -168,7 +170,7 @@ a:hover {
 }
 
 .tela-cadastro {
-    display: none; 
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -206,6 +208,36 @@ a:hover {
     margin-top: 15px;
 }
 
-.titulo-cad{
+.titulo-cad {
     margin-bottom: 3dvh;
 }
+
+/* Exemplo de media query para tablets (768px ou menor) */
+@media (max-width: 768px) {
+    main {
+        margin-inline: 20px;
+        /* Reduzindo a margem */
+    }
+
+    .cards-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+        /* Para ocupar toda a largura da tela em dispositivos menores */
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        /* Ajuste no padding para caber melhor */
+    }
+
+    .links {
+        gap: 30px;
+    }
+}
+
