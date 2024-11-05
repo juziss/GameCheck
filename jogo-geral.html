@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="./assets/img/favicon.png" />
+                <img src="./assets/img/favicon.png" alt="GameCheck Logo" />
                 <h2>GAMECHECK</h2>
             </div>
             <div class="links">
@@ -41,32 +41,39 @@
     </header>
     <main>
         <section class="jogo">
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-content">
-                        <img src="../assets/img/jogo-2.jpg" alt="Lista 1" class="card-image" />
-                    </div>
+    <div class="cards-container">
+        <div class="card">
+            <div class="card-content">
+                <img src="../assets/img/jogo-2.jpg" alt="Project Zomboid" class="card-image" />
+            </div>
+        </div>
+        
+        <div class="info-area">
+            <div class="info-container">
+                <h1 class="titulo-jogo">Project Zomboid</h1>
+                <div class="info-header">
+                    
+                    <p class="ano">2013</p>
+                    <p class="dev">Desenvolvido por <a href="#">The Indie Stone</a></p>
                 </div>
-                <div class="info-container">
-                    <div class="info-header">
-                        <h1 class="titulo-jogo">Project Zomboid</h1>
-                        <p class="ano">2013</p>
-                        <p class="dev">Desenvolvido por <a href="#">The Indie Stone</a></p>
-                    </div>
-                    <div class="descricao">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, qui doloribus distinctio corporis
-                        cumque dolor sequi voluptas explicabo. Odit illum fugiat autem aliquid neque, hic quisquam
-                        maxime ut ad et!
-                    </div>
+                <div class="descricao">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, qui doloribus distinctio corporis
+                    cumque dolor sequi voluptas explicabo. Odit illum fugiat autem aliquid neque, hic quisquam
+                    maxime ut ad et!
                 </div>
             </div>
-        </section>
-
-        <section class="avaliacoes-site">
             <div class="avaliacao-site">
-                <h2>Avaliação do Jogo</h2>
-                <div class="rating">
-                    <p>Classifique o Jogo:</p>
+                <h2 class="titulo-ava">Avaliação do Jogo</h2>
+                <div class="ava-usuario">
+                    <p>Sua Opnião:</p>
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <div class="ava-comunidade">
+                    <p>Comunidade:</p>
                     <span class="star" data-value="1">&#9733;</span>
                     <span class="star" data-value="2">&#9733;</span>
                     <span class="star" data-value="3">&#9733;</span>
@@ -74,25 +81,50 @@
                     <span class="star" data-value="5">&#9733;</span>
                 </div>
             </div>
-        </section>
+            <div class="genero">
+                <div class="genero-cards">
+                    <div class="card-genero">Ação</div>
+                    <div class="card-genero">Sobrevivência</div>
+                    <div class="card-genero">RPG</div>
+                    <div class="card-genero">Terror</div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <section class="comentarios">
+        <h2 class="coment-titulo">Deixe uma Review</h2>
+        <textarea id="comentario-input" maxlength="250" placeholder="O que você achou do game?"></textarea>
+        <p id="contador-caracteres">0/250 caracteres</p>
+        <button id="enviar-comentario">Postar Comentário</button>
 
-        <section class="comentarios">
-            <h2>Deixe um Comentário</h2>
-            <textarea id="comentario-input" maxlength="250" placeholder="Escreva seu comentário aqui..."></textarea>
-            <p id="contador-caracteres">0/250 caracteres</p>
-            <button id="enviar-comentario">Postar Comentário</button>
-
-            <div id="comentarios-lista">
-                <h3>Comentários:</h3>
-                <ul id="lista-comentarios"></ul>
+        <div id="comentarios-lista">
+            <h3>Comentários:</h3>
+            <ul id="lista-comentarios"><div class="comentario">
+                <img src="./assets/img/user-profile.jpg" alt="Foto de Perfil" class="comentario-foto" />
+                <div class="comentario-conteudo">
+                    <p class="comentario-nome">Review por <strong class="realce">Nome Usuário</strong></p>
+                    <div class="comentario-estrelas">
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                    </div>
+                    <button class="comentario-coracao">&#10084;</button>
+                    <p class="comentario-texto">Eu adorei o jogo, muito imersivo ao mesmo tempo que é muito difícil sobreviver. Entretanto, acredito que é isso que faz a magia do jogo, deixa tão realista, adoro jogar com amigos no novo modo online! (●'◡'●)</p>
+                </div>
             </div>
-        </section>
+            </ul>
+        </div>
+    </section>
+</section>
+
     </main>
     <footer>
         <ul>
-            <li><a href="">Sobre</a></li>
-            <li><a href="">Ajuda</a></li>
-            <li><a href="">Contato</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Ajuda</a></li>
+            <li><a href="#">Contato</a></li>
         </ul>
         <p>
             Todos os direitos reservados © 2024 GAMECHECK. A avaliação dos jogos é uma expressão da comunidade.
@@ -100,5 +132,5 @@
     </footer>
     <script src="../assets/js/script.js"></script>
 </body>
-
 </html>
+
