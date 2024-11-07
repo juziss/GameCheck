@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/css/busca-lista.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet" />
-        <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png" />
-        <title>GameCheck</title>
-    </head>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameCheck - Resultados da Busca</title>
+    <link rel="stylesheet" href="/assets/css/busca-lista.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
     <header>
         <nav class="navbar">
@@ -38,35 +35,123 @@
         </nav>
     </header>
     <main>
-        <div class="pesquisa">
-            <!-- Pesquisa EXEMPLO -->
-            <p>Procurando por <span>"Project"</span></p>
-            <hr>
+        <div class="search-container">
+            <div class="search-info">
+                <p>Procurando por <span class="search-term">"Project"</span></p>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar jogos..." aria-label="Buscar jogos">
+                <button type="submit" aria-label="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
         </div>
-        <!-- primeira opção d pesquisa -->
-        <div>
-            <!-- Título e ano -->
-            <h2 class="titulo-game">
-                Project Zomboid
-            </h2>
-            <p class="ano-game">2013</p>
-            <!-- card -->
-            <div class="card">
-                <div class="card-content">
-                    <img src="../assets/img/jogo-2.jpg" alt="Project Zomboid" class="card-image" />
+
+        <div class="content-wrapper">
+            <div class="search-results">
+                <a href="#" class="game-result">
+                    <div class="game-header">
+                        <h2 class="game-title">Project Zomboid</h2>
+                        <p class="game-year">2013</p>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-image">
+                            <img src="assets/img/jogo-2.jpg" alt="Project Zomboid">
+                        </div>
+                        <div class="game-details">
+                            <p class="developer">Desenvolvido por <span>The Indie Stone</span></p>
+                            <div class="rating">
+                                <h4>Avaliação Geral</h4>
+                                <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
+                                    <span class="star filled"></span>
+                                    <span class="star filled"></span>
+                                    <span class="star filled"></span>
+                                    <span class="star filled"></span>
+                                    <span class="star half-filled"></span>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                <h3>Gêneros</h3>
+                                <div class="genre-tags">
+                                    <span class="tag">Sobrevivência</span>
+                                    <span class="tag">Mundo Aberto</span>
+                                    <span class="tag">Zumbis</span>
+                                </div>
+                            </div>
+                            <div class="platform">
+                                <h3>Plataforma</h3>
+                                <span class="tag">Multiplataforma</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="game-result">
+                    <div class="game-header">
+                        <h2 class="game-title">Project Wingman</h2>
+                        <p class="game-year">2020</p>
+                    </div>
+                    <div class="game-content">
+                        <div class="game-image">
+                            <img src="assets/img/project-wingman.jpg" alt="Project Wingman">
+                        </div>
+                        <div class="game-details">
+                            <p class="developer">Desenvolvido por <span>Sector D2</span></p>
+                            <div class="rating">
+                                <h4>Avaliação Geral</h4>
+                                <div class="stars" aria-label="Avaliação: 4 de 5 estrelas">
+                                    <span class="star filled"></span>
+                                    <span class="star filled"></span>
+                                    <span class="star filled"></span>
+                                    <span class="star filled"></span>
+                                    <span class="star"></span>
+                                </div>
+                            </div>
+                            <div class="genres">
+                                <h3>Gêneros</h3>
+                                <div class="genre-tags">
+                                    <span class="tag">Simulação de Voo</span>
+                                    <span class="tag">Ação</span>
+                                    <span class="tag">Combate Aéreo</span>
+                                </div>
+                            </div>
+                            <div class="platform">
+                                <h3>Plataforma</h3>
+                                <span class="tag">Monoplataforma</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="filters">
+                <h3>Filtros</h3>
+                <div class="filter-group">
+                    <button class="filter-btn">Melhores avaliados</button>
+                    <button class="filter-btn">Piores avaliados</button>
+                    <button class="filter-btn">Mais recentes</button>
+                    <button class="filter-btn">Mais antigos</button>
+                </div>
+                <div class="filter-group">
+                    <select name="genre" id="genre-filter" aria-label="Filtrar por gênero">
+                        <option value="">Selecione um gênero</option>
+                        <option value="action">Ação</option>
+                        <option value="adventure">Aventura</option>
+                        <option value="rpg">RPG</option>
+                        <option value="strategy">Estratégia</option>
+                        <option value="simulation">Simulação</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select name="platform" id="platform-filter" aria-label="Filtrar por plataforma">
+                        <option value="">Selecione a plataforma</option>
+                        <option value="multi">Multiplataforma</option>
+                        <option value="single">Monoplataforma</option>
+                    </select>
                 </div>
             </div>
-            <!-- descrição -->
-            <p class="breve-descricao">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos culpa repellat cum inventore magnam, numquam aperiam, expedita quisquam est quasi quod quidem libero nesciunt commodi. Quia explicabo inventore necessitatibus harum! <a href="#">+Ver mais</a>
-            </p>
-            <!-- generos -->
-             <h2 class="titulo-genero">
-                Gêneros
-             </h2>
-             
         </div>
     </main>
+
     <footer>
         <ul>
             <li><a href="#">Sobre</a></li>
@@ -77,6 +162,5 @@
             Todos os direitos reservados © 2024 GAMECHECK. A avaliação dos jogos é uma expressão da comunidade.
         </p>
     </footer>
-    <script src="../assets/js/script.js"></script>
 </body>
 </html>
