@@ -246,16 +246,11 @@ footer p {
     margin-bottom: 30px;
 }
 
-.profile-header {
-    margin-bottom: 20px;
-}
-
 .profile-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
 }
 
 .user-info h1 {
@@ -274,6 +269,7 @@ footer p {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-top: 25px;
 }
 
 .stat {
@@ -295,6 +291,11 @@ footer p {
 
 .recent-activity, .favorite-games {
     margin-top: 40px;
+}
+
+.titulo{
+    font-weight: 600;
+    margin: 10px;
 }
 
 h2 {
