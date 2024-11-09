@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/config.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <title>Configurações</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./assets/img/favicon.png" alt="GameCheck Logo" />
+                <h2>GAMECHECK</h2>
+            </div>
+            <div class="links">
+                <a href="#">Jogos</a>
+                <a href="#">Favoritos</a>
+                <a href="#">Minhas Listas</a>
+            </div>
+            <div class="dropdown">
+                <a href="#">Nome Usuário
+                    <img src="./assets/img/user-profile.jpg" alt="Foto de Perfil" class="profile-pic" id="profile-pic" />
+                </a>
+                <div class="menu">
+                    <a href="#">Perfil</a>
+                    <a href="#">Configurações</a>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="settings-container">
+        <h1 class="titulo">Configurações do Usuário</h1>
+        <div class="user-profile">
+            <div class="profile-image-container">
+                <img src="./assets/img/user-profile.jpg" alt="Foto de Perfil" class="profile-image" id="profile-image">
+                <label for="profile-picture" class="edit-icon">
+                    <i class="fas fa-camera"></i>
+                    <input type="file" id="profile-picture" name="profile-picture" accept="image/*" style="display: none;">
+                </label>
+            </div>
+            <div class="username-container">
+                <h2 id="display-username">Nome Usuário</h2>
+                <button class="edit-username-button" id="edit-username">
+                    <i class="fas fa-edit"></i>
+                </button>
+            </div>
+        </div>
+        <form class="settings-form" id="settings-form">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="usuario@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Nova Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite a nova senha">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirmar Nova Senha</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a nova senha">
+            </div>
+            <button type="submit" class="save-button">Salvar Alterações</button>
+        </form>
+    </main>
+
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <h2>Alterações Salvas</h2>
+            <p>Suas configurações foram atualizadas com sucesso!</p>
+            <button id="close-modal" class="close-button">Fechar</button>
+        </div>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Ajuda</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        <p>
+            Todos os direitos reservados © 2024 GAMECHECK. A avaliação dos jogos é uma expressão da comunidade.
+        </p>
+    </footer>
+
+    <script src="./assets/js/config.js"></script>
+</body>
+</html>
