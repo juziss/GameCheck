@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listas da Comunidade</title>
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/listas.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="../assets/img/favicon.png" alt="GameCheck Logo" />
+          <h2>GAMECHECK</h2>
+        </div>
+        <div class="links">
+          <a href="#">Jogos</a>
+          <a href="#">Favoritos</a>
+          <a href="#">Minhas Listas</a>
+        </div>
+        <div class="dropdown">
+          <a href="#"
+            >Nome Usuário
+            <img
+              src="./assets/img/user-profile.jpg"
+              alt="Foto de Perfil"
+              class="profile-pic"
+              id="profile-pic" />
+          </a>
+          <div class="menu">
+            <a href="#">Perfil</a>
+            <a href="#">Configurações</a>
+            <a href="#">Sair</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Listas da Comunidade</h1>
+      <div class="filters">
+        <select name="sort" id="sort">
+            <option value="recent">Mais Recentes</option>
+            <option value="oldest">Mais Antigos</option>
+        </select>        
+      </div>
+      <section class="community-lists">
+        <div class="list">
+          <h2>Top 3 Jogos de Ação de 2023</h2>
+          <p class="list-info">Por Giovana Gabi | Criado em 20/04/2024</p>
+          <div class="game-cards">
+            <div class="game-card">
+              <img src="https://store-images.s-microsoft.com/image/apps.8560.13814785456466922.4e78e496-4e8c-4f2c-93df-55ea1fa48e05.5866932e-1b13-41b8-974d-d9c49175f488?q=90&w=480&h=270" alt="Hogwarts Legacy" />
+              <h3>Hogwarts Legacy</h3>
+            </div>
+            <div class="game-card">
+              <img src="https://evilhazard.com.br/wp-content/uploads/2022/01/re4idmjlql391g51.jpg" alt="Resident Evil 4 Remake" />
+              <h3>Resident Evil 4 Remake</h3>
+            </div>
+            <div class="game-card">
+              <img src="https://image.api.playstation.com/vulcan/ap/rnd/202211/2222/P9bgtvy2nFHcam3CDXAjAgh9.png" alt="Star Wars Jedi: Survivor" />
+              <h3>Star Wars Jedi: Survivor</h3>
+            </div>
+          </div>
+        </div>
+        <div class="list">
+          <h2>Melhores RPGs do PS4</h2>
+          <p class="list-info">Por Gabriel Brito | Criado em 15/04/2024</p>
+          <div class="game-cards">
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="The Witcher 3" />
+              <h3>The Witcher 3</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Persona 5 Royal" />
+              <h3>Persona 5 Royal</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Final Fantasy VII Remake" />
+              <h3>Final Fantasy VII Remake</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Bloodborne" />
+              <h3>Bloodborne</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Nier: Automata" />
+              <h3>Nier: Automata</h3>
+            </div>
+          </div>
+        </div>
+        <div class="list">
+          <h2>Jogos que Aquecem o Coração (´▽`♡)</h2>
+          <p class="list-info">Por Juzis | Criado em 10/04/2024</p>
+          <div class="game-cards">
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Hades" />
+              <h3>Hades</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Hollow Knight" />
+              <h3>Hollow Knight</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Stardew Valley" />
+              <h3>Stardew Valley</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Celeste" />
+              <h3>Celeste</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Undertale" />
+              <h3>Undertale</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Disco Elysium" />
+              <h3>Disco Elysium</h3>
+            </div>
+          </div>
+        </div>
+        <div class="list">
+          <h2>Melhores Jogos de Estratégia</h2>
+          <p class="list-info">Por Carlos Mendes | Criado em 05/04/2024</p>
+          <div class="game-cards">
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Civilization VI" />
+              <h3>Civilization VI</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="XCOM 2" />
+              <h3>XCOM 2</h3>
+            </div>
+          </div>
+        </div>
+        <div class="list">
+          <h2>Top 10 Jogos de Todos os Tempos</h2>
+          <p class="list-info">Por Luísa Ferreira | Criado em 01/04/2024</p>
+          <div class="game-cards">
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="The Legend of Zelda: Breath of the Wild" />
+              <h3>The Legend of Zelda: Breath of the Wild</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Red Dead Redemption 2" />
+              <h3>Red Dead Redemption 2</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="The Last of Us" />
+              <h3>The Last of Us</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Super Mario Odyssey" />
+              <h3>Super Mario Odyssey</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="God of War (2018)" />
+              <h3>God of War (2018)</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Portal 2" />
+              <h3>Portal 2</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Dark Souls" />
+              <h3>Dark Souls</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Mass Effect 2" />
+              <h3>Mass Effect 2</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Minecraft" />
+              <h3>Minecraft</h3>
+            </div>
+            <div class="game-card">
+              <img src="/placeholder.svg?height=150&width=100" alt="Grand Theft Auto V" />
+              <h3>Grand Theft Auto V</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Ajuda</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+      <p>
+        Todos os direitos reservados © 2024 GAMECHECK. A avaliação dos jogos é
+        uma expressão da comunidade.
+      </p>
+    </footer>
+  </body>
+</html>
