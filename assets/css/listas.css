@@ -356,7 +356,6 @@ h1 {
     text-overflow: ellipsis;
   }
   
-  /* Estilize a barra de rolagem horizontal */
   .game-cards::-webkit-scrollbar {
     height: 8px;
   }
