@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a151c;
+    color: #ebd3f7;
+    line-height: 1.6;
+}
+
+a {
+    color: #ebd3f7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+::selection {
+    background-color: #ae66d4; 
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #281d2e;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #36283e;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 72px;
+    padding: 0 20px;
+    background: transparent;
+    border-bottom: 1px solid #281d2e;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.navbar .links a,
+.navbar .logo h2 {
+    font-family: "Jersey 10", serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+}
+
+.navbar .dropdown > a {
+    font-weight: 600; 
+}
+
+.navbar .links a:hover {
+    color: #d3a5e8;
+}
+
+.logo h2 {
+    font-size: 2.0rem;
+    font-weight: 500;
+}
+
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.dropdown {
+    font-size: 24px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 72px;
+    font-size: 1.0rem;
+}
+
+.dropdown > a > img {
+    width: 50px;
+    height: 50px;
+    margin-left: 12px;
+}
+
+.dropdown:hover .menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu {
+    position: absolute;
+    top: 60px;
+    right: -20px;
+    display: grid;
+    width: 180px;
+    padding: 8px 0;
+    background: #1a151c;
+    border-radius: 10px;
+    border: 1px solid #281d2e;
+    box-shadow: 0 40px 40px rgb(0 0 0 / 6%);
+    color: #ebd3f7;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+}
+
+.menu::before {
+    content: "";
+    background: inherit;
+    border-top: 1px solid #281d2e;
+    border-right: 1px solid #281d2e;
+    position: absolute;
+    top: -7px;
+    right: 22px;
+    width: 12px;
+    height: 12px;
+    rotate: -45deg;
+}
+
+.menu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu > a {
+    font-size: 1.0rem;
+    padding: 12px 20px;
+}
+
+.menu > a:hover {
+    background: #281d2e;
+}
+
+.profile-pic { 
+    border-radius: 50%; 
+    margin-right: 5px; 
+}
+
+.links {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    flex: 1;
+}
+
+.links a {
+    font-size: 1.5rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* footer */
+footer {
+    background-color: #1a151c; 
+    color: #ebd3f7; 
+    padding: 20px; 
+    text-align: center; 
+    margin-top: 20px; 
+    border-top: 1px solid #8747a8; 
+}
+
+footer ul {
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 10px; 
+}
+
+footer ul li {
+    margin: 0 15px 10px;
+}
+
+footer ul li a {
+    color: #ae66d4;
+    text-decoration: none; 
+    font-size: 14px;
+    transition: color 0.3s; 
+}
+
+footer ul li a:hover {
+    color: #ebd3f7; 
+}
+
+footer p {
+    font-size: 12px; 
+    margin-top: 10px; 
+}
+
+/* search */
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #281d2e;
+}
+
+.search-info {
+    font-size: 1.2rem;
+}
+
+.search-term {
+    color: #ae66d4;
+    font-weight: 600;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #281d2e;
+    border-radius: 4px 0 0 4px;
+    background-color: #1a151c;
+    color: #ebd3f7;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.5rem;
+    background-color: #ae66d4;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #9656b7;
+}
+
+.search-bar button svg {
+    width: 20px;
+    height: 20px;
+    stroke: #1a151c;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+}
+
+.search-results {
+    flex: 1;
+}
+
+/* listas */
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ebd3f7;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filters select {
+    padding: 0.5rem;
+    background-color: #281d2e;
+    color: #ebd3f7;
+    border: 1px solid #ae66d4;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .community-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .list {
+    background-color: #281d2e;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  
+  .list h2 {
+    font-size: 1.5rem;
+    color: #ae66d4;
+    margin-bottom: 0.5rem;
+  }
+  
+  .list-info {
+    font-size: 0.9rem;
+    color: #a78bba;
+    margin-bottom: 1rem;
+  }
+  
+  .game-cards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .game-card h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    display: inline-block;
+}
+  
+  .game-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .game-card h3 {
+    font-size: 0.9rem;
+    color: #ebd3f7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .game-cards::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .game-cards::-webkit-scrollbar-track {
+    background: #1a151c;
+  }
+  
+  .game-cards::-webkit-scrollbar-thumb {
+    background-color: #ae66d4;
+    border-radius: 4px;
+  }
+  
+  .game-cards::-webkit-scrollbar-thumb:hover {
+    background: #9656b7;
+  }
+  
+  .game-card {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: 130px;
+    margin-left: 20px;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+    }
+  
+    .filters select {
+      width: 100%;
+    }
+  
+    .game-card {
+      width: 80px;
+    }
+  
+    .game-card img {
+      height: 120px;
+    }
+  
+    .game-card h3 {
+      font-size: 0.8rem;
+    }
+  }

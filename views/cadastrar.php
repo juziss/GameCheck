@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once '../models/db.php';  
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = trim($_POST['nome']);
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        echo "<script>alert('Este email já está cadastrado.'); window.location.href = 'index.php';</script>";
+        echo "<script>alert('Este email já está cadastrado.'); window.location.href = '../index.php';</script>";
         exit(); 
     } else {
         
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param('sss', $nome, $email, $senhaHash);
 
         if ($stmt->execute()) {
-            echo "<script>alert('Usuário cadastrado com sucesso!'); window.location.href = 'index.php';</script>";
+            echo "<script>alert('Usuário cadastrado com sucesso!'); window.location.href = '../index.php';</script>";
         } else {
             echo "Erro: " . $stmt->error;
         }

@@ -1,27 +1,24 @@
 <?php
-// Database connection (mantido)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gamecheck";
+session_start();  // Inicia a sessão
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+// Verifica se o usuário está logado
+if (!isset($_SESSION['id_usuario'])) {
+    header('Location: login.php'); // Redireciona para a página de login se não estiver logado
+    exit;
 }
 
-// Get game ID from URL
+require_once '../models/db.php';
+require_once '../models/busca.php';
+
+// Obtém o ID do jogo pela URL
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($id <= 0) {
     die("ID do jogo inválido");
 }
 
-// Fetch game details
-$sql = "SELECT id_jogo, nome_jogo, desenvolvedora_jogo, ano_lancamento, capa_jogo 
-        FROM Jogo 
-        WHERE id_jogo = ?";
-
+// Consulta os detalhes do jogo
+$sql = "SELECT id_jogo, nome_jogo, desenvolvedora_jogo, ano_lancamento, capa_jogo, desc_jogo, media_nota FROM Jogo WHERE id_jogo = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
@@ -33,29 +30,67 @@ if ($result->num_rows === 0) {
 
 $jogo = $result->fetch_assoc();
 
-// Check if capa_jogo is a URL or a BLOB
-$capa_jogo = $jogo['capa_jogo'];
-$is_url = filter_var($capa_jogo, FILTER_VALIDATE_URL);
-
-// If it is a BLOB, convert to base64
-$capa_base64 = '';
-if (!$is_url && $capa_jogo) {
-    $capa_base64 = base64_encode($capa_jogo);
+// Função para obter os gêneros do jogo
+function getGenerosDoJogo($jogo_id, $conn) {
+    $sql = "SELECT g.nome_genero 
+    FROM Genero g 
+    INNER JOIN Jogo_Genero jg ON g.id_genero = jg.id_genero 
+    WHERE jg.id_jogo = ?";
+$stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $jogo_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    $generos = [];
+    while ($row = $result->fetch_assoc()) {
+        $generos[] = $row['nome_genero'];
+    }
+    
+    return $generos;
 }
 
+$capa_jogo = $jogo['capa_jogo'];
+
+// Obtém os gêneros do jogo com base no ID
+$generos = getGenerosDoJogo($id, $conn);
+
+$sql_comentarios = "SELECT u.nome_usuario, a.nota, a.avaliacao 
+                    FROM Avaliacao a
+                    INNER JOIN Usuario u ON a.id_usuario = u.id_usuario
+                    WHERE a.id_jogo = ?";
+$stmt_comentarios = $conn->prepare($sql_comentarios);
+$stmt_comentarios->bind_param("i", $id);
+$stmt_comentarios->execute();
+$result_comentarios = $stmt_comentarios->get_result();
+$comentarios = [];
+
+while ($row = $result_comentarios->fetch_assoc()) {
+    $comentarios[] = $row;
+}
+
+$media_nota = $jogo['media_nota'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/jogo-geral.css" />
+    <link rel="stylesheet" href="../assets/css/jogo-geral.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png" />
     <title>GameCheck</title>
 </head>
 <body>
@@ -71,8 +106,8 @@ if (!$is_url && $capa_jogo) {
                 <a href="#">Minhas Listas</a>
             </div>
             <div class="dropdown">
-                <a href="#">Nome Usuário
-                    <img src="./assets/img/user-profile.jpg" alt="Foto de Perfil" class="profile-pic"
+                <a href="#"><?php echo isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : "Visitante"; ?>
+                    <img src="../assets/img/user-profile.jpg" alt="Foto de Perfil" class="profile-pic"
                         id="profile-pic" />
                 </a>
                 <div class="menu">
@@ -85,20 +120,20 @@ if (!$is_url && $capa_jogo) {
     </header>
     <main>
         <section class="jogo">
-      
-
         <main>
         <section class="jogo">
             <div class="cards-container">
                 <div class="card">
                     <div class="card-content">
                     <?php if (!empty($jogo['capa_jogo']) && filter_var($jogo['capa_jogo'], FILTER_VALIDATE_URL)): ?>
-                        <!-- Display the image if it's a valid URL -->
-                        <img src="<?php echo htmlspecialchars($jogo['capa_jogo']); ?>" alt="<?php echo htmlspecialchars($jogo['nome_jogo']); ?>" class="card-image" />
-                    <?php else: ?>
-                        <!-- Display a default image if no valid URL is found -->
-                        <img src="./assets/img/no-image.jpg" alt="Imagem não disponível" class="card-image" />
-                    <?php endif; ?>
+                        <img src="../assets/img/no-image.jpg" alt="Imagem não disponível" class="card-image" />
+                        <img src="<?php echo htmlspecialchars($capa_jogo); ?>" alt="<?php echo htmlspecialchars($jogo['nome_jogo']); ?>" class="card-image" />
+                        <?php else: ?>
+                        <?php
+                            $caminhoImagem = "../capas_jogos/" . htmlspecialchars($jogo['capa_jogo']) . ".jpg";
+                        ?>
+                        <img src="<?php echo $caminhoImagem; ?>" alt="Capa do Jogo" style='object-fit: cover'>
+                        <?php endif; ?>
 
                     </div>
                 </div>
@@ -109,6 +144,9 @@ if (!$is_url && $capa_jogo) {
                         <div class="info-header">
                             <p class="ano"><?php echo htmlspecialchars($jogo['ano_lancamento']); ?></p>
                             <p class="dev">Desenvolvido por <a href="#"><?php echo htmlspecialchars($jogo['desenvolvedora_jogo']); ?></a></p>
+                        </div>
+                        <div class="descricao">
+                        <p><?php echo htmlspecialchars($jogo['desc_jogo']);?></p>
                         </div>
                     </div>
                     
@@ -124,22 +162,25 @@ if (!$is_url && $capa_jogo) {
                         </div>
                         <div class="ava-comunidade">
                             <p>Comunidade:</p>
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
+                            <?php
+                            // Exibe as estrelas com base na média
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= $media_nota) {
+                                    echo '<span class="star selected">&#9733;</span>';
+                                } else {
+                                    echo '<span class="star">&#9734;</span>';
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
-                    
-                    <div class="genero">
+                        <div class="genero">
                         <div class="genero-cards">
-                            <div class="card-genero">Ação</div>
-                            <div class="card-genero">Sobrevivência</div>
-                            <div class="card-genero">RPG</div>
-                            <div class="card-genero">Terror</div>
+                            <?php foreach ($generos as $genero): ?>
+                                <div class="card-genero"><?php echo htmlspecialchars($genero); ?></div>
+                            <?php endforeach; ?>
                         </div>
-                    </div>            
+                        </div>            
                 </div>
             </div>
             
@@ -151,20 +192,28 @@ if (!$is_url && $capa_jogo) {
 
         <div id="comentarios-lista">
             <h3>Comentários:</h3>
-            <ul id="lista-comentarios"><div class="comentario">
-                <img src="./assets/img/user-profile.jpg" alt="Foto de Perfil" class="comentario-foto" />
-                <div class="comentario-conteudo">
-                    <p class="comentario-nome">Review por <strong class="realce">Nome Usuário</strong></p>
-                    <div class="comentario-estrelas">
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                    </div>
-                    <button class="comentario-coracao">&#10084;</button>
-                    <p class="comentario-texto">Eu adorei o jogo, muito imersivo ao mesmo tempo que é muito difícil sobreviver. Entretanto, acredito que é isso que faz a magia do jogo, deixa tão realista, adoro jogar com amigos no novo modo online! (●'◡'●)</p>
+            <ul id="lista-comentarios">
+            <?php foreach ($comentarios as $comentario): ?>
+            <div class="comentario">
+            <img src="../assets/img/user-profile.jpg" alt="Foto de Perfil" class="comentario-foto" />
+            <div class="comentario-conteudo">
+                <p class="comentario-nome">Review por <strong class="realce"><?php echo htmlspecialchars($comentario['nome_usuario']); ?></strong></p>
+                <div class="comentario-estrelas">
+                    <?php
+                    // Exibe as estrelas com base na nota
+                    for ($i = 1; $i <= 5; $i++) {
+                        echo ($i <= $comentario['nota']) ? '<span class="estrela">&#9733;</span>' : '<span class="estrela">&#9734;</span>';
+                    }
+                    ?>
                 </div>
+                <button class="comentario-coracao">&#10084;</button>
+                <p class="comentario-texto"><?php echo htmlspecialchars($comentario['avaliacao']); ?></p>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
             </div>
             </ul>
         </div>
@@ -225,62 +274,71 @@ if (!$is_url && $capa_jogo) {
     });
 
     // Submit review
-    enviarComentario.addEventListener('click', async function() {
-        const comentario = comentarioInput.value.trim();
-        
-        if (selectedRating === 0) {
-            alert("Por favor, dê uma nota de 1 a 5 estrelas.");
+   enviarComentario.addEventListener('click', async function() {
+    const comentario = comentarioInput.value.trim();
+
+    if (selectedRating === 0) {
+        alert("Por favor, dê uma nota de 1 a 5 estrelas.");
+        return;
+    }
+
+    if (!comentario) {
+        alert("Por favor, escreva sua avaliação sobre o jogo.");
+        return;
+    }
+
+    try {
+        // Envia os dados ao PHP
+        const formData = new FormData();
+        formData.append('nota', selectedRating);
+        formData.append('avaliacao', comentario);
+        formData.append('id_jogo', jogoId);
+        formData.append('id_usuario', <?php echo $_SESSION['id_usuario']; ?>);  // Passando o id_usuario logado
+
+
+        const response = await fetch('../controllers/salvar_avaliacao.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) {
+            console.error("Erro na requisição:", response.statusText);
             return;
         }
 
-        if (!comentario) {
-            alert("Por favor, escreva sua avaliação sobre o jogo.");
-            return;
-        }
+        const data = await response.text(); // Recebe a resposta como texto
 
-        try {
-            // Se estiver usando PHP backend
-            const formData = new FormData();
-            formData.append('nota', selectedRating);
-            formData.append('avaliacao', comentario);
-            formData.append('id_jogo', jogoId);
-
-            const response = await fetch('salvar_avaliacao.php', {
-                method: 'POST',
-                body: formData
-            });
-
-            if (response.ok) {
-                // Criar novo comentário na interface
-                const novoComentario = `
-                    <div class="comentario">
-                        <img src="./assets/img/user-profile.jpg" alt="Foto de Perfil" class="comentario-foto" />
-                        <div class="comentario-conteudo">
-                            <p class="comentario-nome">Review por <strong class="realce">${document.querySelector('.dropdown a').textContent.trim()}</strong></p>
-                            <div class="comentario-estrelas">
-                                ${Array(parseInt(selectedRating)).fill('<span class="estrela">&#9733;</span>').join('')}
-                            </div>
-                            <button class="comentario-coracao">&#10084;</button>
-                            <p class="comentario-texto">${comentario}</p>
+        if (data.includes) {
+            // Criar novo comentário na interface
+            const novoComentario = `
+                <div class="comentario">
+                    <img src="../assets/img/user-profile.jpg" alt="Foto de Perfil" class="comentario-foto" />
+                    <div class="comentario-conteudo">
+                        <p class="comentario-nome">Review por <strong class="realce">${document.querySelector('.dropdown a').textContent.trim()}</strong></p>
+                        <div class="comentario-estrelas">
+                            ${Array(parseInt(selectedRating)).fill('<span class="estrela">&#9733;</span>').join('')}
                         </div>
+                        <button class="comentario-coracao">&#10084;</button>
+                        <p class="comentario-texto">${comentario}</p>
                     </div>
-                `;
-                listaComentarios.innerHTML = novoComentario + listaComentarios.innerHTML;
-                
-                // Limpar formulário
-                comentarioInput.value = '';
-                contadorCaracteres.textContent = '0/250 caracteres';
-                selectedRating = 0;
-                stars.forEach(s => s.classList.remove('selected'));
-                
-                alert("Avaliação enviada com sucesso!");
-            } else {
-                throw new Error('Erro ao salvar avaliação');
-            }
-        } catch (error) {
-            alert("Erro ao enviar avaliação: " + error.message);
+                </div>
+            `;
+            listaComentarios.innerHTML = novoComentario + listaComentarios.innerHTML;
+            
+            // Limpar formulário
+            comentarioInput.value = '';
+            contadorCaracteres.textContent = '0/250 caracteres';
+            selectedRating = 0;
+            stars.forEach(s => s.classList.remove('selected'));
+            
+        } else {
+            alert("Erro: " + data.error);
         }
-    });
+    } catch (error) 
+    {
+        alert("Erro ao enviar avaliação: " + error.message);
+    }
+});
 
     // Like button functionality
     document.addEventListener('click', function(e) {
@@ -302,3 +360,4 @@ if (!$is_url && $capa_jogo) {
 });</script>
 </body>
 </html>
+

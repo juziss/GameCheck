@@ -96,16 +96,12 @@ a:hover {
     overflow: hidden;
     transition: border-color 0.3s;
     box-shadow: 0 0 5px #10001c;
-    /* Sombra inicial esfumaçada */
 }
 
 .card-image {
     width: 100%;
-    /* Faz a imagem preencher toda a largura do cartão */
     height: auto;
-    /* Mantém a proporção da imagem */
     display: block;
-    /* Remove espaço embaixo da imagem */
 }
 
 .card:hover {
@@ -136,7 +132,6 @@ a:hover {
         1px -1px 0 #ebd3f7,
         -1px 1px 0 #ebd3f7,
         1px 1px 0#ebd3f7;
-    /* Sombras que criam o efeito de borda */
 }
 
 .card:hover .game-title {
@@ -169,9 +164,7 @@ a:hover {
 
 .select-field option {
     background-color: #281d2e;
-    /* Define a cor de fundo das opções da combobox */
     color: #ebd3f7;
-    /* Define a cor do texto das opções */
 }
 
 label {
