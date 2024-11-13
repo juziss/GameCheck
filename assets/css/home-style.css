@@ -52,7 +52,6 @@ a:hover {
 }
 
 /* Personalização da tela Home */
-
 .divisoria {
     height: 1.2px;
     border-radius: 3px;
@@ -62,6 +61,10 @@ a:hover {
 }
 
 /* seção dos cards */
+.container {
+    display: inline;
+}
+
 .classificacao {
     margin-top: 20px;
 }
@@ -127,7 +130,7 @@ a:hover {
         -1px -1px 0 #ebd3f7,
         1px -1px 0 #ebd3f7,
         -1px 1px 0 #ebd3f7,
-        1px 1px 0#ebd3f7;
+        1px 1px 0 #ebd3f7;
 }
 
 .card:hover .game-title {
@@ -192,7 +195,7 @@ label {
 /* navbar */
 .navbar {
     display: flex;
-    gap: px;
+    gap: 20px;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -213,7 +216,6 @@ label {
     height: 40px;
     border-radius: 6px;
 }
-
 
 .navbar .links a,
 .navbar .logo h2 {
@@ -293,7 +295,7 @@ label {
     right: 22px;
     width: 12px;
     height: 12px;
-    rotate: -45deg;
+    transform: rotate(-45deg);
 }
 
 .menu.open {
@@ -327,7 +329,6 @@ label {
 }
 
 /* footer */
-
 footer {
     background-color: #1a151c;
     color: #ebd3f7;
@@ -363,4 +364,35 @@ footer ul li a:hover {
 footer p {
     font-size: 12px;
     margin-top: 10px;
+}
+
+.card {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    object-fit: contain;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Faz a imagem ocupar todo o espaço disponível */
+}
+
+.game-title {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
 }

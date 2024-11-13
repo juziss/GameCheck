@@ -1,14 +1,14 @@
 // Transição entre telas Login e Cadastro
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('.tela-cadastro').hide();
 
-    $('#btn-cadastrar').on('click', function() {
+    $('#btn-cadastrar').on('click', function () {
         $('.tela-cadastro').fadeIn();
         $('.logo, h1, .linha, .redefinir-senha, .input-email, .input-senha, .entrar-botao, .cadastro').hide();
     });
 
-    $('#btn-login').on('click', function() {
+    $('#btn-login').on('click', function () {
         $('.tela-cadastro').hide();
         $('.logo, h1, .linha, .redefinir-senha, .input-email, .input-senha, .entrar-botao, .cadastro').show();
     });
@@ -16,9 +16,9 @@ $(document).ready(function() {
 
 // Validação de campos Login e Cadastro
 
-$(document).ready(function() {
-    
-    $('form[action="#"]').eq(0).submit(function(event) {
+$(document).ready(function () {
+
+    $('form[action="#"]').eq(0).submit(function (event) {
         let email = $('#email').val();
         let senha = $('#senha').val();
         let isValid = true;
@@ -38,11 +38,11 @@ $(document).ready(function() {
         }
     });
 
-    $('form[action="#"]').eq(1).submit(function(event) {
+    $('form[action="#"]').eq(1).submit(function (event) {
         let nome = $('#nome').val();
         let emailCadastro = $('#email-cadastro').val();
         let senhaCadastro = $('#senha-cadastro').val();
-        let confirmacao = $('#confirmação').val();
+        let confirmacao = $('#confirmacao').val();
         let isValid = true;
 
         if (nome.trim() === "") {
@@ -79,7 +79,7 @@ $(document).ready(function() {
 // classificação
 
 document.querySelectorAll('.star').forEach(star => {
-    star.addEventListener('click', function() {
+    star.addEventListener('click', function () {
         const rating = this.getAttribute('data-value');
 
         // Remove a seleção de todas as estrelas

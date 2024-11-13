@@ -24,7 +24,7 @@
             </div>
             <h1>Acesse sua conta</h1>
             <hr class="linha" />
-            <form action="login.php" method="POST">
+            <form action="./views/login.php" method="POST">
                 <div class="campos">
                     <div class="input-email">
                         <input type="text" id="email" name="email" placeholder="Digite o E-mail" />
@@ -47,7 +47,7 @@
 
             <div class="tela-cadastro">
                 <h2 class="titulo-cad">Cadastre-se Gratuitamente</h2>
-                <form action="cadastrar.php" method="POST">
+                <form action="./views/cadastrar.php" method="POST">
                     <div class="campos">
                         <div class="input-nome">
                             <input type="text" id="nome" name="nome" placeholder="Seu nome completo" />
